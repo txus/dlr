@@ -1,4 +1,4 @@
-# Same as 1.py but using pytorch (torch.backward). Also, auto-render a plot of the results (steps of GD on x-axis, loss on y-axis).
+# 3. Linear regression where input is a vector.
 
 import numpy as np
 import torch
@@ -7,11 +7,11 @@ import matplotlib.pyplot as plt
 np.random.seed(42)
 torch.manual_seed(42)
 
-X = torch.randn(10000)
-Y = X * 1.5
+X = torch.randn(10000, 3)
+Y = (X * 1.5).mean(dim=1)
 
 # params
-w = torch.tensor(0.1, requires_grad=True)
+w = torch.tensor([0.1, 0.1, 0.1], requires_grad=True)
 b = torch.tensor(0.1, requires_grad=True)
 
 lr = 0.1
@@ -25,7 +25,7 @@ for i in range(len(X) // batch_size):
     x = X[from_idx : to_idx]
     y = Y[from_idx : to_idx]
 
-    pred_y = x * w + b
+    pred_y = x @ w.T + b
 
     # L2 loss, mean sq err
     loss = torch.sum((y - pred_y)**2) / batch_size
@@ -52,4 +52,4 @@ print(losses)
 
 plt.plot(np.arange(len(losses)), losses)
 
-plt.savefig('2.png')
+plt.savefig('3.png')

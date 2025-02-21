@@ -18,7 +18,7 @@ For these first 5, use synthetic data, e.g. choose a random input x & then apply
 1. Linear regression where input & output are each a single scalar, with stochastic gradient descent (minibatches), using numpy. (The trickiest part of this one is implementing backprop by hand.)
 2. Same but using pytorch (torch.backward). Also, auto-render a plot of the results (steps of GD on x-axis, loss on y-axis).
 3. Linear regression where input is a vector.
-3. Classification where input is a vector, output is categorical (softmax & negative log likelihood loss).
+3b. Classification where input is a vector, output is categorical (softmax & negative log likelihood loss).
 4. Now use a feedforward layer instead of pure linear regression.
 5. Now use N feedforward layers (deep learning!)
 Now move to the MNIST dataset. Also, start to measure & plot the test-set loss, in addition to the train set.

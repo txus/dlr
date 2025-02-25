@@ -1,4 +1,4 @@
-# 3b. Classification where input is a vector, output is categorical (softmax & negative log likelihood loss).
+# 4. Classification where input is a vector, output is categorical (softmax & negative log likelihood loss).
 
 import numpy as np
 import torch
